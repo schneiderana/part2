@@ -29,6 +29,8 @@ services:
       MYSQL_USER: dolibarr
       MYSQL_PASSWORD: dolibarr
       MYSQL_DATABASE: dolibarr
+    volumes:
+      - dolibarr_db:/var/lib/mysql
 
 networks:
   dolibarr_net: {}
@@ -36,4 +38,5 @@ networks:
 volumes: 
   dolibarr_conf: {}
   dolibarr_docs: {}
+  dolibarr_db: {}
 
