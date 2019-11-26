@@ -44,6 +44,7 @@ spec:
       restartPolicy: Always
       volumes:
       - name: dolibarr-db
-        persistentVolumeClaim:
-          claimName: dolibarr-db
+        emptyDir: {}
+        # persistentVolumeClaim:
+        #  claimName: dolibarr-db
 status: {}
