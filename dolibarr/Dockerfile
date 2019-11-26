@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y zlib1g-dev libicu-dev g++
 
 RUN docker-php-ext-configure intl && docker-php-ext-install intl
 
-RUN docker-php-ext-enable mysqli
+RUN docker-php-ext-install mysqli
 
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
@@ -24,8 +24,8 @@ WORKDIR /var/www
 
 RUN unzip /usr/src/dolibarr.zip -d /usr/src/ \
 	&& rm /usr/src/dolibarr.zip \
-	&& rm -rf /var/html \
-	&& mv /usr/src/dolibarr-10.0.3/* /var/www/html/ \ 
+	&& rm -rf /var/www/html \
+	&& mv /usr/src/dolibarr-10.0.3 /var/www/html/ \ 
 	&& chown -R www-data:www-data /var/www/html/ \
 	&& chmod -R 755 /var/www/html/
 

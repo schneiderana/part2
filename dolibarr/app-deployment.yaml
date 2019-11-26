@@ -28,7 +28,7 @@ spec:
           value: dolibarr
         - name: DOLI_DB_USER
           value: dolibarr
-        image: glenux/dolibarr
+        image: dolibarr:1.1
         name: app
         ports:
         - containerPort: 80
